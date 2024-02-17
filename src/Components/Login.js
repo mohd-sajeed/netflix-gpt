@@ -1,8 +1,22 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import Header from "./Header";
+import {checkValidData} from "../Utils/validateForm"
 
 const Login = () => {
   const [isSignInForm, setIsSignInForm] = useState(true);
+const [errorMessage,setErrorMessage]=useState(null)
+
+  const name = useRef(null)
+  const email = useRef(null)
+  const password = useRef(null)
+  
+  const handleButtonClick =()=>{
+    // Validate Form Data
+     const message = checkValidData(email?.current?.value,password?.current?.value)
+     setErrorMessage(message)
+
+     // Sign In / Sign Up
+  }
 
   const toggleSignInForm = () => {
     setIsSignInForm(!isSignInForm);
@@ -15,33 +29,34 @@ const Login = () => {
           className="absolute"
           alt="Netflix Background"
           src="https://assets.nflxext.com/ffe/siteui/vlv3/c0b69670-89a3-48ca-877f-45ba7a60c16f/2642e08e-4202-490e-8e93-aff04881ee8a/IN-en-20240212-popsignuptwoweeks-perspective_alpha_website_small.jpg"
-          srcset="https://assets.nflxext.com/ffe/siteui/vlv3/c0b69670-89a3-48ca-877f-45ba7a60c16f/2642e08e-4202-490e-8e93-aff04881ee8a/IN-en-20240212-popsignuptwoweeks-perspective_alpha_website_small.jpg 1000w, https://assets.nflxext.com/ffe/siteui/vlv3/c0b69670-89a3-48ca-877f-45ba7a60c16f/2642e08e-4202-490e-8e93-aff04881ee8a/IN-en-20240212-popsignuptwoweeks-perspective_alpha_website_medium.jpg 1500w, https://assets.nflxext.com/ffe/siteui/vlv3/c0b69670-89a3-48ca-877f-45ba7a60c16f/2642e08e-4202-490e-8e93-aff04881ee8a/IN-en-20240212-popsignuptwoweeks-perspective_alpha_website_large.jpg 1800w"
+          srcSet="https://assets.nflxext.com/ffe/siteui/vlv3/c0b69670-89a3-48ca-877f-45ba7a60c16f/2642e08e-4202-490e-8e93-aff04881ee8a/IN-en-20240212-popsignuptwoweeks-perspective_alpha_website_small.jpg 1000w, https://assets.nflxext.com/ffe/siteui/vlv3/c0b69670-89a3-48ca-877f-45ba7a60c16f/2642e08e-4202-490e-8e93-aff04881ee8a/IN-en-20240212-popsignuptwoweeks-perspective_alpha_website_medium.jpg 1500w, https://assets.nflxext.com/ffe/siteui/vlv3/c0b69670-89a3-48ca-877f-45ba7a60c16f/2642e08e-4202-490e-8e93-aff04881ee8a/IN-en-20240212-popsignuptwoweeks-perspective_alpha_website_large.jpg 1800w"
         ></img>
       </div>
 
-      <form className=" w-1/3 absolute bg-black p-16 mt-40 mx-auto right-0 left-0 bg-opacity-85 ">
+      <form onSubmit={(e)=>e.preventDefault()} className=" w-1/3 absolute bg-black p-16 mt-40 mx-auto right-0 left-0 bg-opacity-85 text-white">
         <h1 className="font-bold text-white py-4 text-3xl ">
           {isSignInForm ? " Sign In" : " Sign Up"}
         </h1>
         {!isSignInForm && (
-          <input
+          <input ref={name}
             className="p-4 my-2  w-full bg-customColor rounded-md text-lg "
             type="text"
             placeholder="Full Name"
           />
         )}
         
-        <input
+        <input  ref={email} 
           className="p-4 my-2  w-full bg-customColor rounded-md text-lg "
           type="text"
           placeholder="Email or phone number"
         />
-        <input
+        <input ref={password}
           className="p-4 my-2 w-full bg-customColor rounded-md text-lg "
           type="password"
           placeholder="Password"
         />
-        <button className="p-2 my-6 w-full bg-red-600 text-white rounded-md cursor-pointer">
+        <p className="text-lg text-red-500 py-2">{errorMessage}</p>
+        <button className="p-2 my-6 w-full bg-red-600 text-white rounded-md cursor-pointer" onClick={handleButtonClick}>
           {isSignInForm ? " Sign In" : " Sign Up"}
         </button>
         <p
