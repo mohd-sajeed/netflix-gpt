@@ -9,6 +9,12 @@
 - useRef Hook
 - Firebase setup
 - Deployed our app to production
+- Create signUp user account
+- Implement signIn user Api
+- Created Redux store with userSlice
+- Implemented Sign Out
+- Update profile 
+- Fetch from TMDB Movies
 
 # Features
 - Browse (After Authentication)
