@@ -1,4 +1,5 @@
 # Netflix GPT
+
 - create React app
 - Configured Tailwindcss
 - Header
@@ -13,17 +14,33 @@
 - Implement signIn user Api
 - Created Redux store with userSlice
 - Implemented Sign Out
-- Update profile 
+- Update profile
 - Fetch from TMDB Movies
+- Bug Fix: sign up user displayName and profile picture update
+- Bug Fix: If the user is not loggedIn then redirect /browse to Login page and vice versa.
+- Unsubscribe to the OnAuthStateChange() callback
+- Add hardcoded values to the constant file
+- Register TMDB API & create an app & get access token
+- Get Data from TMDB  now playing movie list API
+- Custom Hook for Now Playing Movies
+- Create movieSlice
+- Update Store with Movies Data
+- Planning for MainContainer & SecondaryContainer
+- Fetch Data for Trailer Video
+- Update the Store with Trailer Video Data
+- Embedded the Youtube Video and make it autoplay and mute
+- Tailwind Classes to make MainContainer look awesome
+
 
 # Features
+
 - Browse (After Authentication)
 - Header
 - Main Movie
   - Trailer in background
   - Title & Description
-- Movie  Suggestions
- - MovieLists * N
+- Movie Suggestions
+- MovieLists \* N
 
 - Login / SignUp form
 - redirect to browse page

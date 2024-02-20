@@ -7,12 +7,11 @@ import {
   updateProfile,
 } from "firebase/auth";
 import { auth } from "../Utils/firebaseConfig";
-import { useNavigate } from "react-router-dom";
+import { NETFLIX_BG } from "../Utils/constants";
 
 const Login = () => {
   const [isSignInForm, setIsSignInForm] = useState(true);
   const [errorMessage, setErrorMessage] = useState(null);
-  const navigate = useNavigate();
 
   const name = useRef(null);
   const email = useRef(null);
@@ -39,14 +38,12 @@ const Login = () => {
           })
             .then(() => {
               // Profile updated!
-              navigate("/browse");
             })
             .catch((error) => {
               // An error occurred
               setErrorMessage(error);
             });
-          console.log(user);
-          navigate("/browse");
+          // console.log(user);
         })
         .catch((error) => {
           const errorCode = error.code;
@@ -62,8 +59,7 @@ const Login = () => {
       )
         .then((userCredential) => {
           const user = userCredential.user;
-          console.log(user);
-          navigate("/browse");
+          // console.log(user);
         })
         .catch((error) => {
           const errorCode = error.code;
@@ -83,8 +79,7 @@ const Login = () => {
         <img
           className="absolute"
           alt="Netflix Background"
-          src="https://assets.nflxext.com/ffe/siteui/vlv3/c0b69670-89a3-48ca-877f-45ba7a60c16f/2642e08e-4202-490e-8e93-aff04881ee8a/IN-en-20240212-popsignuptwoweeks-perspective_alpha_website_small.jpg"
-          srcSet="https://assets.nflxext.com/ffe/siteui/vlv3/c0b69670-89a3-48ca-877f-45ba7a60c16f/2642e08e-4202-490e-8e93-aff04881ee8a/IN-en-20240212-popsignuptwoweeks-perspective_alpha_website_small.jpg 1000w, https://assets.nflxext.com/ffe/siteui/vlv3/c0b69670-89a3-48ca-877f-45ba7a60c16f/2642e08e-4202-490e-8e93-aff04881ee8a/IN-en-20240212-popsignuptwoweeks-perspective_alpha_website_medium.jpg 1500w, https://assets.nflxext.com/ffe/siteui/vlv3/c0b69670-89a3-48ca-877f-45ba7a60c16f/2642e08e-4202-490e-8e93-aff04881ee8a/IN-en-20240212-popsignuptwoweeks-perspective_alpha_website_large.jpg 1800w"
+          src={NETFLIX_BG}
         ></img>
       </div>
 
