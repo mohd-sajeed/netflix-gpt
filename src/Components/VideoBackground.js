@@ -3,7 +3,7 @@ import useMovieTrailer from "../customHooks/useMovieTrailer";
 
 const VideoBackground = ({ movieId }) => {
   const trailerVideo = useSelector((store) => store.movies?.MovieTrailer);
-
+// console.log(trailerVideo)
   useMovieTrailer(movieId);
 
   return (
@@ -16,7 +16,9 @@ const VideoBackground = ({ movieId }) => {
           "?&autoplay=1&mute=1"
         }
         title="YouTube video player"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        frameBorder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        allowFullScreen
       ></iframe>
     </div>
   );

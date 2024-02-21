@@ -48,18 +48,18 @@ const Header = () => {
 
   return (
     <>
-      <div className="absolute bg-gradient-to-b from-black px-8 py-2 z-10 w-screen flex justify-between">
-        <img className="w-52 " src={LOGO} alt="Netflix Logo" />
+      <div className="absolute px-8 py-2 z-10 w-screen flex justify-between">
+        <img className="w-40 " src={LOGO} alt="Netflix Logo" />
         {user && (
           <div className="flex p-2">
             <img
-              className="w-12 h-12 rounded-lg"
+              className="w-10 h-10 rounded-lg"
               src={USER_ICON}
               // src={user.photoURL}
               alt="userIcon"
             />
             <button
-              className="font-bold text-white h-12 mx-2"
+              className="font-bold text-white h-10 mx-2"
               onClick={handleSignOut}
             >
               (Sign Out)
