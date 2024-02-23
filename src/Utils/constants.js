@@ -6,16 +6,23 @@ export const USER_ICON =
 
 export const NETFLIX_BG =
   "https://assets.nflxext.com/ffe/siteui/vlv3/c0b69670-89a3-48ca-877f-45ba7a60c16f/2642e08e-4202-490e-8e93-aff04881ee8a/IN-en-20240212-popsignuptwoweeks-perspective_alpha_website_small.jpg";
-  
+
 // export const srcSet =
 //   "https://assets.nflxext.com/ffe/siteui/vlv3/c0b69670-89a3-48ca-877f-45ba7a60c16f/2642e08e-4202-490e-8e93-aff04881ee8a/IN-en-20240212-popsignuptwoweeks-perspective_alpha_website_small.jpg 1000w, https://assets.nflxext.com/ffe/siteui/vlv3/c0b69670-89a3-48ca-877f-45ba7a60c16f/2642e08e-4202-490e-8e93-aff04881ee8a/IN-en-20240212-popsignuptwoweeks-perspective_alpha_website_medium.jpg 1500w, https://assets.nflxext.com/ffe/siteui/vlv3/c0b69670-89a3-48ca-877f-45ba7a60c16f/2642e08e-4202-490e-8e93-aff04881ee8a/IN-en-20240212-popsignuptwoweeks-perspective_alpha_website_large.jpg 1800w";
 
 export const API_OPTIONS = {
-  method: 'GET',
+  method: "GET",
   headers: {
-    accept: 'application/json',
-    Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlZjRlYjgzMDk3NzkzNWUxMDE0MjRkMGZlOTQ3YThhMiIsInN1YiI6IjY1ZDM4M2YxZGM4NjQ3MDE4NWM3ZTEwOCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.Pk9eowRTSuBQLbxwGRwS6RR8bIgq7u3msi3As_sN_HQ'
-  }
+    accept: "application/json",
+    Authorization:
+      "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlZjRlYjgzMDk3NzkzNWUxMDE0MjRkMGZlOTQ3YThhMiIsInN1YiI6IjY1ZDM4M2YxZGM4NjQ3MDE4NWM3ZTEwOCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.Pk9eowRTSuBQLbxwGRwS6RR8bIgq7u3msi3As_sN_HQ",
+  },
 };
 
-export const IMG_CDN_URL= "https://image.tmdb.org/t/p/w780"
+export const IMG_CDN_URL = "https://image.tmdb.org/t/p/w780";
+
+export const SUPPORTED_LANGUAGUES = [
+  { name: "English", identifier: "en" },
+  { name: "Hindi", identifier: "hindi" },
+  { name: "Spanish", identifier: "spanish" },
+];

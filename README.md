@@ -34,7 +34,11 @@
 - Build Movie List & Movie Card
 - TMDB Image CDN URL
 - Made the Browse Page amazing with Tailwind CSS
-- Custom Hook for Popular Movies
+- Custom Hook for Popular Movies, Upcoming Movies,TopRated Movies
+- GPT Search Page
+- GPT Search Bar
+- (BONUS) Built Multi-Language Feature in our App
+
 
 
 # Features
