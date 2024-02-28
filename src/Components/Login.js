@@ -75,9 +75,9 @@ const Login = () => {
   return (
     <div>
       <Header />
-      <div>
+      <div className="absolute">
         <img
-          className="absolute"
+          className="md:h-auto h-screen object-cover "
           alt="Netflix Background"
           src={NETFLIX_BG}
         ></img>
@@ -85,7 +85,7 @@ const Login = () => {
 
       <form
         onSubmit={(e) => e.preventDefault()}
-        className=" w-1/3 absolute bg-black p-16 mt-40 mx-auto right-0 left-0 bg-opacity-85 text-white"
+        className="w-full md:w-1/3 absolute bg-black p-12 mt-32 md:mt-40 mx-auto right-0 left-0 bg-opacity-80 text-white rounded-lg"
       >
         <h1 className="font-bold text-white py-4 text-3xl ">
           {isSignInForm ? " Sign In" : " Sign Up"}
@@ -101,7 +101,7 @@ const Login = () => {
 
         <input
           ref={email}
-          className="p-4 my-2  w-full bg-customColor rounded-md text-lg "
+          className="p-4 my-4  w-full bg-customColor rounded-md text-lg "
           type="text"
           placeholder="Email or phone number"
         />

@@ -8,6 +8,7 @@ import useTopRatedMovies from "../customHooks/useTopRatedMovies";
 import useUpcomingMovies from "../customHooks/useUpcomingMovies";
 import GptSearch from "./GptSearchPage";
 import { useSelector } from "react-redux";
+import Shimmer from "./Shimmer";
 
 const Browse = () => {
   const showGptSearch = useSelector((store) => store?.gpt?.gptSearch);
@@ -16,7 +17,7 @@ const Browse = () => {
   usePopularMovies();
   useTopRatedMovies();
   useUpcomingMovies();
-  return (
+  return  (
     <div>
       <Header />
       {showGptSearch ? (

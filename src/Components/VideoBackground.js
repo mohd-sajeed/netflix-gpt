@@ -1,12 +1,13 @@
 import { useSelector } from "react-redux";
 import useMovieTrailer from "../customHooks/useMovieTrailer";
+import Shimmer from "./Shimmer";
 
 const VideoBackground = ({ movieId }) => {
   const trailerVideo = useSelector((store) => store.movies?.MovieTrailer);
-// console.log(trailerVideo)
+  // console.log(trailerVideo)
   useMovieTrailer(movieId);
 
-  return (
+  return  ( 
     <div className="w-screen">
       <iframe
         className="w-screen aspect-video"
@@ -16,11 +17,9 @@ const VideoBackground = ({ movieId }) => {
           "?&autoplay=1&mute=1"
         }
         title="YouTube video player"
-        frameBorder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-        allowFullScreen
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
       ></iframe>
-    </div>
+    </div> 
   );
 };
 

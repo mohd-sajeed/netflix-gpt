@@ -1,19 +1,38 @@
 import React from "react";
 import lang from "../Utils/languageConstants";
 import { useSelector } from "react-redux";
+import useGptSearchClick from "../Utils/useGptSearchClick";
+import useSearchMovieTMDB from "../Utils/useSearchMovieTMDB";
 
 const GptSearchBar = () => {
   const langSelect = useSelector((store) => store.config.lang);
+
+
+  // const handleGptSearchClick = useGptSearchClick();
+  const {searchText,setSearchText,handleGptSearchClick} = useGptSearchClick()
+   useSearchMovieTMDB();
+
+  const handleClick=()=>{
+    handleGptSearchClick(setSearchText)
+  }
+
   return (
-    <div className="pt-44 flex justify-center">
-      <form className="w-1/2 bg-black grid grid-cols-12 rounded-md">
+    <div className=" pt-[30%] md:pt-[10%] flex justify-center flex-col md:flex-row">
+      <form
+        className="w-full md:w-1/2 bg-black grid grid-cols-12 rounded-md my-4 md:my-0"
+        onSubmit={(e) => e.preventDefault()}
+      >
         <input
-          className="col-span-9 px-4 py-2   m-4 rounded-md"
+          
+          className="col-span-9 px-4 py-2 m-4 rounded-md"
           type=" text"
           placeholder={lang[langSelect].gptSearchPlaceholder}
         />
 
-        <button className="col-span-3 bg-red-500 px-4 py-2 m-4 rounded-md">
+        <button
+          className="col-span-3 bg-red-500 m-4 rounded-md"
+          onClick={handleClick}
+        >
           {lang[langSelect].search}
         </button>
       </form>
