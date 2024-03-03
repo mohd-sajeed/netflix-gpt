@@ -167,4 +167,8 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
+# production
+/build
+.firebase/
+
 # End of https://www.toptal.com/developers/gitignore/api/windows,node
